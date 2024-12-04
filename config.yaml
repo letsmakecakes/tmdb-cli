@@ -1,0 +1,9 @@
+api_key: eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2MzhkYzg2YmE1ZTBkZWU0OTEwNGVkOTVkMDdjMDUyNSIsIm5iZiI6MTczMzIzNjk4Mi44NTY5OTk5LCJzdWIiOiI2NzRmMThmNjY3OWVjMTUzMjg4MjZiYmEiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.KCzSUU8Infr8oylV31eMG14F9U8ZcSC2M0ApSh_02PE
+log_level: info
+cache_directory: /tmp/tmdb-cache
+timeout_seconds: 30
+
+metrics:
+  enabled: true
+  port: 9090
+  metrics_path: /metrics
