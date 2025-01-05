@@ -183,6 +183,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📧 Contact
 
-Your Name - [@letsmakecakes](https://twitter.com/letsmakecakes_)
+Your Name - [@letsmakecakes_](https://twitter.com/letsmakecakes_)
 
-Project Link: [https://github.com/letsmakecakes/tmdb-cli](https://github.com/letsmakecakes/tmdb-clie)
+Project Link: [https://github.com/letsmakecakes/tmdb-cli](https://github.com/letsmakecakes/tmdb-cli)
