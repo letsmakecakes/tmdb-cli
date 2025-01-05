@@ -1,27 +1,27 @@
 package config
 
 import (
-	"errors"
-	"github.com/joho/godotenv"
 	"os"
 )
 
-var (
-	tmdbAPIKey string
-)
+// Config holds the configuration for the application.
+type Config struct {
+	BearerToken string
+}
 
-// LoadConfig Loads environment variables from .env file
-func LoadConfig() error {
-	// Load .env file in the current directory, if it exists
-	if err := godotenv.Load(); err != nil {
-		return errors.New("Error loading config .env file " + err.Error())
+// NewConfig initializes a new Config with the given bearer token.
+func NewConfig(bearerToken string) *Config {
+	return &Config{
+		BearerToken: bearerToken,
+	}
+}
+
+// Load Loads configuration from environment variables.
+func Load() (*Config, error) {
+	token := os.Getenv("TMDB_BEARER_TOKEN")
+	if token == "" {
+		token = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2MzhkYzg2YmE1ZTBkZWU0OTEwNGVkOTVkMDdjMDUyNSIsIm5iZiI6MTczMzIzNjk4Mi44NTY5OTk5LCJzdWIiOiI2NzRmMThmNjY3OWVjMTUzMjg4MjZiYmEiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.KCzSUU8Infr8oylV31eMG14F9U8ZcSC2M0ApSh_02PE"
 	}
 
-	// Retrieve TMDB API Key
-	tmdbAPIKey = os.Getenv("TMDB_API_KEY")
-	if tmdbAPIKey == "" {
-		return errors.New("TMDB_API_KEY is not set in the environment")
-	}
-
-	return nil
+	return NewConfig(token), nil
 }
